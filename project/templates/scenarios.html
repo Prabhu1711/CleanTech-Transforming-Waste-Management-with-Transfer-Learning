@@ -1,0 +1,234 @@
+{% extends "base.html" %}
+
+{% block title %}Use Cases - HematoVision{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container-main">
+        <div class="text-center mb-5">
+            <h2 class="mb-3">
+                <i class="fas fa-lightbulb text-primary me-2"></i>
+                Use Case Scenarios
+            </h2>
+            <p class="text-muted">Real-world applications of HematoVision in healthcare</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-hospital me-2"></i>
+                            Scenario 1: Automated Diagnostic Systems
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-robot text-primary" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="card-title">Healthcare Automation</h6>
+                        <p class="card-text">
+                            Integrating HematoVision into automated diagnostic systems in clinical settings 
+                            revolutionizes blood analysis by capturing images of blood samples, classifying 
+                            cells in real-time, and generating detailed reports.
+                        </p>
+                        <h6>Key Benefits:</h6>
+                        <ul class="small">
+                            <li>Reduces manual workload on pathologists</li>
+                            <li>Speeds up diagnostic processes</li>
+                            <li>Ensures high accuracy in results</li>
+                            <li>Improves patient care and treatment efficiency</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <i class="fas fa-clock me-1"></i>Processing time: < 2 seconds per image
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-laptop-medical me-2"></i>
+                            Scenario 2: Remote Medical Consultations
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-video text-success" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="card-title">Telemedicine Enhancement</h6>
+                        <p class="card-text">
+                            HematoVision enhances telemedicine platforms by allowing healthcare providers 
+                            to upload blood cell images for automated analysis, enabling timely and 
+                            accurate assessments without in-person visits.
+                        </p>
+                        <h6>Key Benefits:</h6>
+                        <ul class="small">
+                            <li>Enables remote diagnostic capabilities</li>
+                            <li>Improves access to specialized medical expertise</li>
+                            <li>Serves remote and underserved areas</li>
+                            <li>Reduces travel time and costs for patients</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <i class="fas fa-globe me-1"></i>Accessible from anywhere with internet
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-header bg-warning text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-graduation-cap me-2"></i>
+                            Scenario 3: Educational Tools
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-3">
+                            <i class="fas fa-chalkboard-teacher text-warning" style="font-size: 3rem;"></i>
+                        </div>
+                        <h6 class="card-title">Medical Training</h6>
+                        <p class="card-text">
+                            HematoVision's classification model integrates into educational tools for 
+                            medical training, allowing students and laboratory technicians to upload 
+                            and analyze blood cell images with instant feedback.
+                        </p>
+                        <h6>Key Benefits:</h6>
+                        <ul class="small">
+                            <li>Hands-on learning experience</li>
+                            <li>Instant feedback and validation</li>
+                            <li>Enhanced understanding of cell morphology</li>
+                            <li>Practical skills development</li>
+                        </ul>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <i class="fas fa-users me-1"></i>Suitable for students and professionals
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">
+                            <i class="fas fa-chart-line text-primary me-2"></i>
+                            Impact Metrics
+                        </h4>
+                        <div class="row text-center">
+                            <div class="col-md-3 mb-3">
+                                <div class="border-end">
+                                    <h3 class="text-primary mb-1">94.2%</h3>
+                                    <p class="mb-0 small">Classification Accuracy</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="border-end">
+                                    <h3 class="text-success mb-1">< 2s</h3>
+                                    <p class="mb-0 small">Processing Time</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <div class="border-end">
+                                    <h3 class="text-warning mb-1">12K+</h3>
+                                    <p class="mb-0 small">Training Images</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3 mb-3">
+                                <h3 class="text-info mb-1">4</h3>
+                                <p class="mb-0 small">Cell Types</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-industry text-primary me-2"></i>
+                            Industry Applications
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="fas fa-hospital text-primary me-2"></i>
+                                <strong>Hospitals & Clinics:</strong> Automated blood analysis
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-flask text-success me-2"></i>
+                                <strong>Laboratories:</strong> High-throughput screening
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-university text-warning me-2"></i>
+                                <strong>Medical Schools:</strong> Interactive learning tools
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-search text-info me-2"></i>
+                                <strong>Research:</strong> Data analysis and validation
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-globe text-success me-2"></i>
+                            Global Impact
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <i class="fas fa-heart text-danger me-2"></i>
+                                <strong>Healthcare Access:</strong> Improved diagnostic reach
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-clock text-primary me-2"></i>
+                                <strong>Time Efficiency:</strong> Faster diagnosis and treatment
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-dollar-sign text-success me-2"></i>
+                                <strong>Cost Reduction:</strong> Lower operational expenses
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-chart-line text-warning me-2"></i>
+                                <strong>Quality Improvement:</strong> Consistent accuracy
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <div class="card bg-primary text-white">
+                <div class="card-body">
+                    <h4 class="card-title">Ready to Transform Your Healthcare Practice?</h4>
+                    <p class="card-text">
+                        Experience the power of AI-driven blood cell classification with HematoVision
+                    </p>
+                    <a href="{{ url_for('upload') }}" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-microscope me-2"></i>Start Classification
+                    </a>
+                    <a href="{{ url_for('about') }}" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
