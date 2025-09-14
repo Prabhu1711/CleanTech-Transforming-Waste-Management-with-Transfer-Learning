@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+
+{% block title %}About - HematoVision{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container-main">
+        <div class="text-center mb-5">
+            <h2 class="mb-3">
+                <i class="fas fa-info-circle text-primary me-2"></i>
+                About HematoVision
+            </h2>
+            <p class="text-muted">Advanced AI-powered blood cell classification system</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title mb-4">
+                            <i class="fas fa-microscope text-primary me-2"></i>
+                            Project Overview
+                        </h4>
+                        <p class="lead">
+                            HematoVision is an innovative blood cell classification system that leverages the power of 
+                            transfer learning and deep neural networks to provide accurate, efficient, and scalable 
+                            diagnostic tools for healthcare professionals.
+                        </p>
+                        
+                        <h5 class="mt-4 mb-3">
+                            <i class="fas fa-brain text-success me-2"></i>
+                            Transfer Learning Approach
+                        </h5>
+                        <p>
+                            Our system utilizes a pre-trained VGG16 convolutional neural network, fine-tuned on a 
+                            comprehensive dataset of 12,000 annotated blood cell images. This transfer learning 
+                            approach allows us to:
+                        </p>
+                        <ul>
+                            <li>Achieve higher accuracy with less training time</li>
+                            <li>Reduce computational costs significantly</li>
+                            <li>Leverage pre-existing knowledge of image features</li>
+                            <li>Provide reliable results across diverse image sources</li>
+                        </ul>
+
+                        <h5 class="mt-4 mb-3">
+                            <i class="fas fa-chart-line text-warning me-2"></i>
+                            Technical Specifications
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><strong>Model Architecture:</strong> VGG16 CNN</li>
+                                    <li><strong>Dataset Size:</strong> 12,000+ images</li>
+                                    <li><strong>Input Size:</strong> 224x224 pixels</li>
+                                    <li><strong>Classes:</strong> 4 blood cell types</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li><strong>Accuracy:</strong> 94.2%</li>
+                                    <li><strong>Precision:</strong> 92.8%</li>
+                                    <li><strong>Recall:</strong> 93.5%</li>
+                                    <li><strong>Processing Time:</strong> < 2 seconds</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h5 class="mt-4 mb-3">
+                            <i class="fas fa-users text-info me-2"></i>
+                            Target Applications
+                        </h5>
+                        <p>
+                            HematoVision is designed to support various healthcare scenarios:
+                        </p>
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-hospital text-primary" style="font-size: 2rem;"></i>
+                                    <h6 class="mt-2">Clinical Diagnostics</h6>
+                                    <p class="small text-muted">Automated diagnostic systems in hospitals and clinics</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-laptop-medical text-success" style="font-size: 2rem;"></i>
+                                    <h6 class="mt-2">Telemedicine</h6>
+                                    <p class="small text-muted">Remote consultations and diagnostics</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="text-center">
+                                    <i class="fas fa-graduation-cap text-warning" style="font-size: 2rem;"></i>
+                                    <h6 class="mt-2">Medical Education</h6>
+                                    <p class="small text-muted">Training tools for students and technicians</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-cogs text-primary me-2"></i>
+                            Technology Stack
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fab fa-python me-2"></i>Python & TensorFlow</li>
+                            <li><i class="fas fa-flask me-2"></i>Flask Web Framework</li>
+                            <li><i class="fas fa-brain me-2"></i>VGG16 Neural Network</li>
+                            <li><i class="fas fa-code me-2"></i>HTML5, CSS3, JavaScript</li>
+                            <li><i class="fab fa-bootstrap me-2"></i>Bootstrap 5</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-shield-alt text-success me-2"></i>
+                            Quality Assurance
+                        </h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check me-2"></i>Rigorous model validation</li>
+                            <li><i class="fas fa-check me-2"></i>Cross-validation testing</li>
+                            <li><i class="fas fa-check me-2"></i>Performance monitoring</li>
+                            <li><i class="fas fa-check me-2"></i>Continuous improvement</li>
+                            <li><i class="fas fa-check me-2"></i>Medical-grade accuracy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-5">
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-microscope me-2"></i>Try HematoVision
+            </a>
+            <a href="{{ url_for('scenarios') }}" class="btn btn-outline-secondary btn-lg">
+                <i class="fas fa-lightbulb me-2"></i>View Use Cases
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
