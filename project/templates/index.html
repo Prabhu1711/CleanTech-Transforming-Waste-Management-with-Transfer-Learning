@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="container-main">
+        <div class="hero-section">
+            <h1 class="hero-title">
+                <i class="fas fa-microscope text-primary"></i>
+                HematoVision
+            </h1>
+            <p class="hero-subtitle">
+                Advanced Blood Cell Classification using Transfer Learning & Deep Neural Networks
+            </p>
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-upload me-2"></i>Start Classification
+            </a>
+            <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg">
+                <i class="fas fa-info-circle me-2"></i>Learn More
+            </a>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-brain feature-icon"></i>
+                        <h5 class="card-title">Transfer Learning</h5>
+                        <p class="card-text">
+                            Leverages pre-trained VGG16 CNN for enhanced accuracy and reduced training time.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-tachometer-alt feature-icon"></i>
+                        <h5 class="card-title">Real-time Analysis</h5>
+                        <p class="card-text">
+                            Instant blood cell classification with detailed confidence scores and probabilities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fas fa-shield-alt feature-icon"></i>
+                        <h5 class="card-title">Medical Grade</h5>
+                        <p class="card-text">
+                            Trained on 12,000+ annotated blood cell images for clinical-grade accuracy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-6">
+                <h3 class="mb-4">
+                    <i class="fas fa-microscope text-primary me-2"></i>
+                    Blood Cell Types
+                </h3>
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-primary rounded-circle p-2 me-3">
+                                <i class="fas fa-circle text-white"></i>
+                            </div>
+                            <span class="fw-bold">Eosinophils</span>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-success rounded-circle p-2 me-3">
+                                <i class="fas fa-circle text-white"></i>
+                            </div>
+                            <span class="fw-bold">Lymphocytes</span>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-warning rounded-circle p-2 me-3">
+                                <i class="fas fa-circle text-white"></i>
+                            </div>
+                            <span class="fw-bold">Monocytes</span>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-danger rounded-circle p-2 me-3">
+                                <i class="fas fa-circle text-white"></i>
+                            </div>
+                            <span class="fw-bold">Neutrophils</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h3 class="mb-4">
+                    <i class="fas fa-chart-line text-success me-2"></i>
+                    Model Performance
+                </h3>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Accuracy</span>
+                        <span class="fw-bold">94.2%</span>
+                    </div>
+                    <div class="progress progress-custom">
+                        <div class="progress-bar bg-success progress-bar-custom" style="width: 94.2%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Precision</span>
+                        <span class="fw-bold">92.8%</span>
+                    </div>
+                    <div class="progress progress-custom">
+                        <div class="progress-bar bg-primary progress-bar-custom" style="width: 92.8%"></div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                        <span>Recall</span>
+                        <span class="fw-bold">93.5%</span>
+                    </div>
+                    <div class="progress progress-custom">
+                        <div class="progress-bar bg-warning progress-bar-custom" style="width: 93.5%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <h4 class="card-title">
+                            <i class="fas fa-rocket text-primary me-2"></i>
+                            Ready to Get Started?
+                        </h4>
+                        <p class="card-text">
+                            Upload your blood cell images and get instant, accurate classifications powered by advanced AI.
+                        </p>
+                        <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-upload me-2"></i>Upload & Classify Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
