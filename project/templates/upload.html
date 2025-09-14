@@ -1,0 +1,132 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Image - HematoVision{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container-main">
+        <div class="text-center mb-5">
+            <h2 class="mb-3">
+                <i class="fas fa-upload text-primary me-2"></i>
+                Blood Cell Classification
+            </h2>
+            <p class="text-muted">Upload a blood cell image for instant AI-powered classification</p>
+        </div>
+
+        {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <i class="fas fa-exclamation-triangle me-2"></i>
+            {{ error }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        {% endif %}
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                            <div class="mb-4">
+                                <label for="file" class="form-label fw-bold">
+                                    <i class="fas fa-image me-2"></i>Select Blood Cell Image
+                                </label>
+                                <input type="file" class="form-control form-control-lg" id="file" name="file" 
+                                       accept=".png,.jpg,.jpeg" required>
+                                <div class="form-text">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Supported formats: PNG, JPG, JPEG (Max size: 16MB)
+                                </div>
+                            </div>
+
+                            <div class="mb-4" id="imagePreview" style="display: none;">
+                                <label class="form-label fw-bold">
+                                    <i class="fas fa-eye me-2"></i>Image Preview
+                                </label>
+                                <div class="text-center">
+                                    <img id="previewImg" src="" alt="Preview" class="img-fluid rounded" 
+                                         style="max-height: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg" id="submitBtn">
+                                    <i class="fas fa-microscope me-2"></i>Classify Blood Cell
+                                </button>
+                            </div>
+                        </form>
+
+                        <div id="loadingSpinner" class="text-center mt-4" style="display: none;">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-2 text-muted">Analyzing image with AI model...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-lightbulb text-warning me-2"></i>
+                            Tips for Best Results
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="fas fa-check text-success me-2"></i>
+                                        Use high-quality, clear images
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-check text-success me-2"></i>
+                                        Ensure good lighting and contrast
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">
+                                        <i class="fas fa-check text-success me-2"></i>
+                                        Focus on individual blood cells
+                                    </li>
+                                    <li class="mb-2">
+                                        <i class="fas fa-check text-success me-2"></i>
+                                        Avoid blurry or distorted images
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('file').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('previewImg').src = e.target.result;
+            document.getElementById('imagePreview').style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+    } else {
+        document.getElementById('imagePreview').style.display = 'none';
+    }
+});
+
+document.getElementById('uploadForm').addEventListener('submit', function(e) {
+    document.getElementById('submitBtn').disabled = true;
+    document.getElementById('loadingSpinner').style.display = 'block';
+});
+</script>
+{% endblock %}
