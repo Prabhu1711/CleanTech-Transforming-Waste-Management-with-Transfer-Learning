@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block title %}Classification Result - HematoVision{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="container-main">
+        <div class="text-center mb-5">
+            <h2 class="mb-3">
+                <i class="fas fa-chart-bar text-success me-2"></i>
+                Classification Results
+            </h2>
+            <p class="text-muted">AI-powered blood cell analysis complete</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-image me-2"></i>Analyzed Image
+                        </h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <img src="data:image/png;base64,{{ image_data }}" alt="Analyzed Blood Cell" 
+                             class="img-fluid rounded" style="max-height: 400px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-microscope me-2"></i>Classification Result
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center mb-4">
+                            <h3 class="text-success mb-3">
+                                <i class="fas fa-check-circle me-2"></i>
+                                {{ predicted_class }}
+                            </h3>
+                            <div class="mb-3">
+                                <span class="badge bg-success fs-6 px-3 py-2">
+                                    Confidence: {{ "%.1f"|format(confidence * 100) }}%
+                                </span>
+                            </div>
+                        </div>
+
+                        <h6 class="mb-3">
+                            <i class="fas fa-chart-pie me-2"></i>Detailed Probabilities
+                        </h6>
+                        
+                        {% for class_name, probability in class_probabilities.items() %}
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">{{ class_name }}</span>
+                                <span>{{ "%.1f"|format(probability * 100) }}%</span>
+                            </div>
+                            <div class="progress progress-custom">
+                                {% if class_name == predicted_class %}
+                                    <div class="progress-bar bg-success progress-bar-custom" 
+                                         style="width: {{ probability * 100 }}%"></div>
+                                {% else %}
+                                    <div class="progress-bar bg-secondary progress-bar-custom" 
+                                         style="width: {{ probability * 100 }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <i class="fas fa-info-circle text-primary me-2"></i>
+                            About {{ predicted_class }}
+                        </h5>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {% if predicted_class == 'Eosinophils' %}
+                                <p>Eosinophils are white blood cells that play a crucial role in fighting parasitic infections and allergic reactions. They typically make up 1-4% of white blood cells in healthy individuals.</p>
+                                {% elif predicted_class == 'Lymphocytes' %}
+                                <p>Lymphocytes are key components of the adaptive immune system, including T cells, B cells, and natural killer cells. They help the body remember and fight specific pathogens.</p>
+                                {% elif predicted_class == 'Monocytes' %}
+                                <p>Monocytes are the largest white blood cells that differentiate into macrophages and dendritic cells. They play important roles in phagocytosis and antigen presentation.</p>
+                                {% elif predicted_class == 'Neutrophils' %}
+                                <p>Neutrophils are the most abundant white blood cells, making up 50-70% of all white blood cells. They are the first responders to bacterial infections and inflammation.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('upload') }}" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-upload me-2"></i>Analyze Another Image
+            </a>
+            <a href="{{ url_for('index') }}" class="btn btn-outline-secondary btn-lg">
+                <i class="fas fa-home me-2"></i>Back to Home
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
